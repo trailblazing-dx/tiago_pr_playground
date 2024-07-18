@@ -71,7 +71,7 @@ app.use('/users', routesUsers)
 // Static
 app.use(st({ path: './public', url: '/public' }));
 
-console.log('test2');
+console.log('test');
 
 // Add the option to output (sanitized!) markdown
 marked.setOptions({ sanitize: true });
