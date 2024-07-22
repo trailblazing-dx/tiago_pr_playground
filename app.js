@@ -46,7 +46,7 @@ app.use(session({
 }))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(fileUpload());
+app.use(fileUpload())
 
 // Routes
 app.use(routes.current_user);
@@ -66,7 +66,7 @@ app.get('/about_new', routes.about_new);
 app.get('/chat', routes.chat.get);
 app.put('/chat', routes.chat.add);
 app.delete('/chat', routes.chat.delete);
-app.use('/users', routesUsers)
+app.use('/users', routesUsers);
 
 // Static
 app.use(st({ path: './public', url: '/public' }));
