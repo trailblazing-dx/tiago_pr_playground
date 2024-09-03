@@ -8,6 +8,7 @@ var Todo = new Schema({
 });
 
 mongoose.model('Todo', Todo);
+mongoose.model('Todo2', Todo);
 
 var User = new Schema({
   username: String,
@@ -40,7 +41,7 @@ if (mongoCFUri) {
   mongoUri = process.env.MONGODB_URI;
 }
 
-console.log("Using Mongo URI " + mongoUri);
+console.log("Using Mongo URI:" + mongoUri);
 
 mongoose.connect(mongoUri);
 
