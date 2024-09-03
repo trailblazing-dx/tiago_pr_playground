@@ -23,7 +23,7 @@ var fileUpload = require('express-fileupload');
 var dust = require('dustjs-linkedin');
 var dustHelpers = require('dustjs-helpers');
 var cons = require('consolidate');
-const hbs = require('hbs')
+const hbs = require('hbs');
 
 var app = express();
 var routes = require('./routes');
@@ -47,6 +47,8 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
+
+console.log('hello');
 
 // Routes
 app.use(routes.current_user);
