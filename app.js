@@ -23,7 +23,7 @@ var fileUpload = require('express-fileupload');
 var dust = require('dustjs-linkedin');
 var dustHelpers = require('dustjs-helpers');
 var cons = require('consolidate');
-const hbs = require('hbs')
+const hbs = require('hbs');
 
 var app = express();
 var routes = require('./routes');
@@ -48,6 +48,8 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
+console.log('hello');
+
 // Routes
 app.use(routes.current_user);
 app.get('/', routes.index);
@@ -66,7 +68,7 @@ app.get('/about_new', routes.about_new);
 app.get('/chat', routes.chat.get);
 app.put('/chat', routes.chat.add);
 app.delete('/chat', routes.chat.delete);
-app.use('/users', routesUsers)
+app.use('/users', routesUsers);
 
 // Static
 app.use(st({ path: './public', url: '/public' }));
@@ -74,6 +76,8 @@ app.use(st({ path: './public', url: '/public' }));
 // Add the option to output (sanitized!) markdown
 marked.setOptions({ sanitize: true });
 app.locals.marked = marked;
+
+console.log("hello world 2");
 
 // development only
 if (app.get('env') == 'development') {
