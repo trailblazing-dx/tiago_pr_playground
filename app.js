@@ -14,7 +14,7 @@ var path = require('path');
 var ejsEngine = require('ejs-locals');
 var bodyParser = require('body-parser');
 var session = require('express-session')
-var methodOverride = require('method-override');
+var methodOverride = require('method-override')
 var logger = require('morgan');
 var errorHandler = require('errorhandler');
 var optional = require('optional');
@@ -56,7 +56,7 @@ app.post('/login', routes.loginHandler);
 app.get('/admin', routes.isLoggedIn, routes.admin);
 app.get('/account_details', routes.isLoggedIn, routes.get_account_details);
 app.post('/account_details', routes.isLoggedIn, routes.save_account_details);
-app.get('/logout', routes.logout);
+app.get('/logout/now', routes.logout);
 app.post('/create', routes.create);
 app.get('/destroy/:id', routes.destroy);
 app.get('/edit/:id', routes.edit);
@@ -73,7 +73,7 @@ app.use(st({ path: './public', url: '/public' }));
 
 // Add the option to output (sanitized!) markdown
 marked.setOptions({ sanitize: true });
-app.locals.marked = marked;
+app.locals.marked = marked
 
 // development only
 if (app.get('env') == 'development') {
