@@ -4,7 +4,7 @@
 
 // mongoose setup
 require('./mongoose-db');
-require('./typeorm-db')
+require('./typeorm-db');
 
 var st = require('st');
 var crypto = require('crypto');
@@ -47,6 +47,8 @@ app.use(session({
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
+
+console.log('test');
 
 // Routes
 app.use(routes.current_user);
