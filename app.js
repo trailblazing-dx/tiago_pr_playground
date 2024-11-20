@@ -4,7 +4,7 @@
 
 // mongoose setup
 require('./mongoose-db');
-require('./typeorm-db')
+require('./typeorm-db');
 
 var st = require('st');
 var crypto = require('crypto');
@@ -71,6 +71,8 @@ app.use('/users', routesUsers)
 // Static
 app.use(st({ path: './public', url: '/public' }));
 
+console.log('test');
+
 // Add the option to output (sanitized!) markdown
 marked.setOptions({ sanitize: true });
 app.locals.marked = marked;
@@ -80,7 +82,7 @@ if (app.get('env') == 'development') {
   app.use(errorHandler());
 }
 
-var token = 'SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9';
+var token = 'SECRET_TOKEN_f8ed84e8f41e4146403dd4a6bbcea5e418d23a9'; // inline
 console.log('token: ' + token);
 
 http.createServer(app).listen(app.get('port'), function () {
