@@ -48,6 +48,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(fileUpload());
 
+console.log("Hello World");
+console.log("Hello World");
+console.log("Hello World");
+console.log("Hello World");
+
+
 // Routes
 app.use(routes.current_user);
 app.get('/', routes.index);
